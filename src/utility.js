@@ -52,18 +52,22 @@ exports.loadVideosUrls = async (requestQueue, page, maxRequested, isSearchResult
                     try {
                         await video.hover();
                     } catch (e) {}
+                    
+                    let data = {url: await video.$eval(url, (el) => el.href)};
+                    
+                    await Apify.pushData(data);
 
-                    const rq = await requestQueue.addRequest({
-                        url: await video.$eval(url, (el) => el.href),
-                        userData: { label: 'DETAIL' },
-                    });
+//                     const rq = await requestQueue.addRequest({
+//                         url: await video.$eval(url, (el) => el.href),
+//                         userData: { label: 'DETAIL' },
+//                     });
 
                     videosEnqueued++;
 
-                    if (!rq.wasAlreadyPresent) {
-                        // count only unique videos
-                        videosEnqueuedUnique++;
-                    }
+//                     if (!rq.wasAlreadyPresent) {
+//                         count only unique videos
+//                         videosEnqueuedUnique++;
+//                     }
 
                     if (videosEnqueued >= maxRequested) {
                         shouldContinue = false;
