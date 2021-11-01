@@ -74,7 +74,7 @@ exports.loadVideosUrls = async (requestQueue, page, maxRequested, isSearchResult
                         break;
                     }
 
-                    await sleep(CONSTS.DELAY.HUMAN_PAUSE.max);
+                    // await sleep(100);
 
                     if (!isSearchResultPage) {
                         // remove the link on channels, so the scroll happens
@@ -84,7 +84,7 @@ exports.loadVideosUrls = async (requestQueue, page, maxRequested, isSearchResult
                     videoCount++;
                 }
 
-                await sleep(CONSTS.DELAY.START_LOADING_MORE_VIDEOS);
+                await sleep(100);
 
                 if (isSearchResultPage) {
                     // remove element after extracting result urls. removing it make the page scroll,
