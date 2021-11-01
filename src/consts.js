@@ -1,9 +1,9 @@
 exports.DELAY = {
-    KEY_PRESS: { min: 5, max: 25 },
-    BTWN_KEY_PRESS: { min: 45, max: 375 },
-    MOUSE_CLICK: { min: 40, max: 150 },
-    HUMAN_PAUSE: { min: 300, max: 800 },
-    START_LOADING_MORE_VIDEOS: 3000,
+    KEY_PRESS: { min: 5, max: 50 },
+    BTWN_KEY_PRESS: { min: 5, max: 50 },
+    MOUSE_CLICK: { min: 5, max: 50 },
+    HUMAN_PAUSE: { min: 100, max: 500 },
+    START_LOADING_MORE_VIDEOS: 1000,
 };
 
 exports.MOUSE_STEPS = 5;
