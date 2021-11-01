@@ -151,6 +151,5 @@
         }
     },
     "required": [
-        "proxyConfiguration"
     ]
 }
